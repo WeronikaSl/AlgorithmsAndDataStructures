@@ -1,61 +1,39 @@
 #include <iostream>
-#include "Node.hpp"
+#include <string>
 #include "LinkedList.hpp"
 
 int main()
 {
-    LinkedList linkedList;
-    linkedList.pushBack(6);
-    linkedList.displayElements();
+    //LINKED LIST
+
+    LinkedList<uint16_t> linkedListWithInts;
+
+    linkedListWithInts.popFront(); //head is a nullptr, checks if no error
+    linkedListWithInts.displayElements();
+
+    linkedListWithInts.pushBack(6);
+    linkedListWithInts.displayElements();
 
     std::cout << std::endl << std::endl;
 
-    linkedList.pushFront(999);
-    linkedList.displayElements();
+    linkedListWithInts.pushFront(999);
+    linkedListWithInts.displayElements();
 
     std::cout << std::endl << std::endl;
 
-    linkedList.insert(2, 10);
-    linkedList.displayElements();
+    LinkedList<std::string> linkedListWithStrings;
+
+    linkedListWithStrings.insert(0, "HI"); //empty list, head is nullptr 
+    linkedListWithStrings.displayElements();
+
+    linkedListWithStrings.removeFromPosition(0);
+    linkedListWithStrings.displayElements();
+
+    linkedListWithStrings.removeFromPosition(10); //list is empty, checks if no error
+    linkedListWithStrings.displayElements();
 
     std::cout << std::endl << std::endl;
 
-    linkedList.popFront();
-    linkedList.displayElements();
-
-    std::cout << std::endl << std::endl;
-
-    linkedList.pushBack(88);
-    linkedList.displayElements();
-
-    std::cout << std::endl << std::endl;
-
-    linkedList.removeValue(10);
-    linkedList.displayElements();
-
-    std::cout << std::endl << std::endl;
-
-    linkedList.pushBack(54);
-    linkedList.displayElements();
-
-    std::cout << std::endl << std::endl;
-
-    linkedList.removeValue(88);
-    linkedList.displayElements();
-
-    std::cout << std::endl << std::endl;
-
-    linkedList.pushBack(82);
-    linkedList.displayElements();
-
-    std::cout << std::endl << std::endl;
-
-    linkedList.pushBack(91);
-    linkedList.displayElements();
-
-    std::cout << std::endl << std::endl;
-
-    linkedList.removeFromPosition(2);
-    linkedList.displayElements();
-
+    linkedListWithStrings.pushFront(":D");
+    linkedListWithStrings.displayElements();
 }

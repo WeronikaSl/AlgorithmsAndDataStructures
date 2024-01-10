@@ -128,8 +128,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AlgorithmsAndDataStructures.cpp" />
-    <ClCompile Include="LinkedList.cpp" />
-    <ClCompile Include="Node.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedList.hpp" />

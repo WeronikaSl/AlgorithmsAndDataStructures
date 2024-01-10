@@ -1,9 +1,10 @@
 #pragma once
 
-struct Node
+template <typename T> struct Node
 {
-	int valueOfThisNode{ 0 };
-	Node* locationOfNextNode{ nullptr };
-	Node();
-	Node(int, Node*);
+	T valueOfThisNode{ 0 };
+	Node<T>* locationOfNextNode{ nullptr };
+	Node() {};
+	Node(T valueOfThisNode, Node<T>* locationOfNextNode) : valueOfThisNode(valueOfThisNode), locationOfNextNode(locationOfNextNode)
+	{}
 };
