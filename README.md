@@ -1,1 +1,1 @@
-Simple classes implemented to practice algorithms and data structures.
+Repetition of algorithms and data structures. Simple classes implemented to practice before starting solving leetcode problems. 
