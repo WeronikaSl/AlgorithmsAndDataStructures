@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClInclude Include="LinkedList.hpp" />
     <ClInclude Include="Node.hpp" />
+    <ClInclude Include="StackDynamic.hpp" />
     <ClInclude Include="StackStatic.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

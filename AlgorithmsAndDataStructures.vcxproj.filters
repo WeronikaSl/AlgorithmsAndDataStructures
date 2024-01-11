@@ -29,5 +29,8 @@
     <ClInclude Include="StackStatic.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="StackDynamic.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
