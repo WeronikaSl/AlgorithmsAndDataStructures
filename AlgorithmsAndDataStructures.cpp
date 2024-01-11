@@ -3,6 +3,7 @@
 #include "LinkedList.hpp"
 #include "StackStatic.hpp"
 #include "StackDynamic.hpp"
+#include "QueueStatic.hpp"
 
 int main()
 {
@@ -59,27 +60,63 @@ int main()
     //std::cout << stackStaticWithString.top() << std::endl;
 
     ////STACK DYNAMIC
-    StackDynamic<uint16_t> stackDynamicWithInt;
-    std::cout << stackDynamicWithInt.peek() << std::endl;
-    std::cout << stackDynamicWithInt.isEmpty() << std::endl;
-    stackDynamicWithInt.pop();
-    stackDynamicWithInt.push(10);
-    std::cout << stackDynamicWithInt.peek() << std::endl;
-    stackDynamicWithInt.push(12);
-    std::cout << stackDynamicWithInt.peek() << std::endl;
-    stackDynamicWithInt.pop();
-    std::cout << stackDynamicWithInt.peek() << std::endl;
-    std::cout << stackDynamicWithInt.isEmpty() << std::endl;
+    //StackDynamic<uint16_t> stackDynamicWithInt;
+    //std::cout << stackDynamicWithInt.peek() << std::endl;
+    //std::cout << stackDynamicWithInt.isEmpty() << std::endl;
+    //stackDynamicWithInt.pop();
+    //stackDynamicWithInt.push(10);
+    //std::cout << stackDynamicWithInt.peek() << std::endl;
+    //stackDynamicWithInt.push(12);
+    //std::cout << stackDynamicWithInt.peek() << std::endl;
+    //stackDynamicWithInt.pop();
+    //std::cout << stackDynamicWithInt.peek() << std::endl;
+    //std::cout << stackDynamicWithInt.isEmpty() << std::endl;
 
-    StackDynamic<std::string> stackDynamicWithString;
-    std::cout << stackDynamicWithString.peek() << std::endl;
-    std::cout << stackDynamicWithString.isEmpty() << std::endl;
-    stackDynamicWithString.pop();
-    stackDynamicWithString.push("ok");
-    std::cout << stackDynamicWithString.peek() << std::endl;
-    stackDynamicWithString.push("oke");
-    std::cout << stackDynamicWithString.peek() << std::endl;
-    stackDynamicWithString.pop();
-    std::cout << stackDynamicWithString.peek() << std::endl;
-    std::cout << stackDynamicWithString.isEmpty() << std::endl;
+    //StackDynamic<std::string> stackDynamicWithString;
+    //std::cout << stackDynamicWithString.peek() << std::endl;
+    //std::cout << stackDynamicWithString.isEmpty() << std::endl;
+    //stackDynamicWithString.pop();
+    //stackDynamicWithString.push("ok");
+    //std::cout << stackDynamicWithString.peek() << std::endl;
+    //stackDynamicWithString.push("oke");
+    //std::cout << stackDynamicWithString.peek() << std::endl;
+    //stackDynamicWithString.pop();
+    //std::cout << stackDynamicWithString.peek() << std::endl;
+    //std::cout << stackDynamicWithString.isEmpty() << std::endl;
+
+    ////QUEUE STATIC
+    
+    //QueueStatic<uint32_t> queueStatic;
+    //std::cout << queueStatic.size() << std::endl;
+    //std::cout << queueStatic.front() << std::endl;
+    //std::cout << queueStatic.end() << std::endl;
+    //queueStatic.push(10);
+    //queueStatic.push(22);
+    //std::cout << queueStatic.size() << std::endl;
+    //std::cout << queueStatic.front() << std::endl;
+    //std::cout << queueStatic.end() << std::endl;
+    //queueStatic.pop();
+    //std::cout << queueStatic.size() << std::endl;
+    //std::cout << queueStatic.front() << std::endl;
+    //std::cout << queueStatic.end() << std::endl;
+
+    QueueStatic<std::string> queueStaticWithString;
+    std::cout << queueStaticWithString.size() << std::endl;
+    std::cout << queueStaticWithString.front() << std::endl;
+    std::cout << queueStaticWithString.end() << std::endl;
+    queueStaticWithString.push("ok");
+    std::cout << queueStaticWithString.size() << std::endl;
+    std::cout << queueStaticWithString.front() << std::endl;
+    std::cout << queueStaticWithString.end() << std::endl;
+    queueStaticWithString.push("okay");
+    std::cout << queueStaticWithString.size() << std::endl;
+    std::cout << queueStaticWithString.front() << std::endl;
+    std::cout << queueStaticWithString.end() << std::endl;
+    queueStaticWithString.pop();
+    std::cout << queueStaticWithString.size() << std::endl;
+    std::cout << queueStaticWithString.front() << std::endl;
+    std::cout << queueStaticWithString.end() << std::endl;
+    queueStaticWithString.pop();
+    queueStaticWithString.pop();
+
 }
