@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClInclude Include="LinkedList.hpp" />
     <ClInclude Include="Node.hpp" />
+    <ClInclude Include="QueueDynamic.hpp" />
     <ClInclude Include="QueueStatic.hpp" />
     <ClInclude Include="StackDynamic.hpp" />
     <ClInclude Include="StackStatic.hpp" />

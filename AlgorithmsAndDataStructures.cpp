@@ -4,6 +4,7 @@
 #include "StackStatic.hpp"
 #include "StackDynamic.hpp"
 #include "QueueStatic.hpp"
+#include "QueueDynamic.hpp"
 
 int main()
 {
@@ -100,23 +101,48 @@ int main()
     //std::cout << queueStatic.front() << std::endl;
     //std::cout << queueStatic.end() << std::endl;
 
-    QueueStatic<std::string> queueStaticWithString;
-    std::cout << queueStaticWithString.size() << std::endl;
-    std::cout << queueStaticWithString.front() << std::endl;
-    std::cout << queueStaticWithString.end() << std::endl;
-    queueStaticWithString.push("ok");
-    std::cout << queueStaticWithString.size() << std::endl;
-    std::cout << queueStaticWithString.front() << std::endl;
-    std::cout << queueStaticWithString.end() << std::endl;
-    queueStaticWithString.push("okay");
-    std::cout << queueStaticWithString.size() << std::endl;
-    std::cout << queueStaticWithString.front() << std::endl;
-    std::cout << queueStaticWithString.end() << std::endl;
-    queueStaticWithString.pop();
-    std::cout << queueStaticWithString.size() << std::endl;
-    std::cout << queueStaticWithString.front() << std::endl;
-    std::cout << queueStaticWithString.end() << std::endl;
-    queueStaticWithString.pop();
-    queueStaticWithString.pop();
+    //QueueStatic<std::string> queueStaticWithString;
+    //std::cout << queueStaticWithString.size() << std::endl;
+    //std::cout << queueStaticWithString.front() << std::endl;
+    //std::cout << queueStaticWithString.end() << std::endl;
+    //queueStaticWithString.push("ok");
+    //std::cout << queueStaticWithString.size() << std::endl;
+    //std::cout << queueStaticWithString.front() << std::endl;
+    //std::cout << queueStaticWithString.end() << std::endl;
+    //queueStaticWithString.push("okay");
+    //std::cout << queueStaticWithString.size() << std::endl;
+    //std::cout << queueStaticWithString.front() << std::endl;
+    //std::cout << queueStaticWithString.end() << std::endl;
+    //queueStaticWithString.pop();
+    //std::cout << queueStaticWithString.size() << std::endl;
+    //std::cout << queueStaticWithString.front() << std::endl;
+    //std::cout << queueStaticWithString.end() << std::endl;
+    //queueStaticWithString.pop();
+    //queueStaticWithString.pop();
 
+    //// QUEUE DYNAMIC
+
+    //QueueDynamic<uint32_t> queueDynamicWithInt;
+    //queueDynamicWithInt.display();
+    //queueDynamicWithInt.enqueue(10);
+    //queueDynamicWithInt.enqueue(55);
+    //queueDynamicWithInt.enqueue(78);
+    //queueDynamicWithInt.display();
+    //queueDynamicWithInt.dequeue();
+    //queueDynamicWithInt.display();
+    //queueDynamicWithInt.dequeue();
+    //queueDynamicWithInt.dequeue();
+    //queueDynamicWithInt.dequeue();
+
+    QueueDynamic<std::string> queueDynamicWithString;
+    queueDynamicWithString.enqueue("ok");
+    queueDynamicWithString.display();
+    queueDynamicWithString.enqueue("okeee");
+    queueDynamicWithString.enqueue("okeeey");
+    queueDynamicWithString.display();
+    queueDynamicWithString.dequeue();
+    queueDynamicWithString.display();
+    queueDynamicWithString.dequeue();
+    queueDynamicWithString.dequeue();
+    queueDynamicWithString.dequeue();
 }
