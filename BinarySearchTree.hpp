@@ -3,12 +3,12 @@
 
 using namespace BST;  //why doesnt this work?
 
-class BinarySearchTree
+template <typename T> class BinarySearchTree
 {
 private:
-	BST::Node* root{ nullptr };
+	BST::Node<T>* root{ nullptr };
 
-	void insertNewNode(BST::Node** node, int value) //is it correct to create pointer to pointer? temporary solution to fix SIGSEGV, refactor later
+	void insertNewNode(BST::Node<T>** node, T value) //is it correct to create pointer to pointer? temporary solution to fix SIGSEGV, refactor later
 	{
 		if (*node == nullptr) //will only happen in case of root?
 		{
@@ -22,7 +22,7 @@ private:
 			}
 			else
 			{
-				BST::Node** ptrToLeftChild = &((*node)->leftChild);
+				BST::Node<T>** ptrToLeftChild = &((*node)->leftChild);
 				insertNewNode(ptrToLeftChild, value); //recursive algorithm
 			}
 		}
@@ -34,23 +34,36 @@ private:
 			}
 			else
 			{
-				BST::Node** ptrToRightChild = &((*node)->rightChild);
+				BST::Node<T>** ptrToRightChild = &((*node)->rightChild);
 				insertNewNode(ptrToRightChild, value);  //recursive algorithm
 			}
 		}
 	}
-	BST::Node* createNode(int value) const
+	BST::Node<T>* createNode(T value) const
 	{
-		BST::Node* leftChild{ nullptr };
-		BST::Node* rightChild{ nullptr };
-		BST::Node* newNode = new BST::Node(value, leftChild, rightChild); //is it ok? Client shouldn't be responsible for freeing memory
+		BST::Node<T>* leftChild{ nullptr };
+		BST::Node<T>* rightChild{ nullptr };
+		BST::Node<T>* newNode = new BST::Node<T>(value, leftChild, rightChild); //is it ok? Client shouldn't be responsible for freeing memory
 		return newNode;
 	}
-public:
-	void insert(int value)
+	void traverseInOrder(BST::Node<T>* node) const
 	{
-		BST::Node** ptrToRoot = &root;
+		if (node != nullptr)
+		{
+			traverseInOrder(node->leftChild);
+			std::cout << node->value << " ";
+			traverseInOrder(node->rightChild);
+		}
+	}
+public:
+	void insert(T value)
+	{
+		BST::Node<T>** ptrToRoot = &root;
 		insertNewNode(ptrToRoot, value);
+	}
+	void traverse() const
+	{
+		traverseInOrder(root);
 	}
 	~BinarySearchTree() = default; //has to free the memory to prevent memory leak!
 };

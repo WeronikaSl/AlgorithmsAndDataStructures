@@ -149,11 +149,24 @@ int main()
 
     ////BINARY SEARCH TREE
 
-    BinarySearchTree binarySearchTree;
-    binarySearchTree.insert(10);
-    binarySearchTree.insert(2);
-    binarySearchTree.insert(55);
-    binarySearchTree.insert(4);
-    binarySearchTree.insert(8);
-    binarySearchTree.insert(99);
+    BinarySearchTree<uint16_t> binarySearchTreeWithInt;
+    binarySearchTreeWithInt.traverse();
+    binarySearchTreeWithInt.insert(10);
+    binarySearchTreeWithInt.insert(2);
+    binarySearchTreeWithInt.insert(55);
+    binarySearchTreeWithInt.insert(4);
+    binarySearchTreeWithInt.insert(8);
+    binarySearchTreeWithInt.insert(99);
+    binarySearchTreeWithInt.traverse();
+
+    std::cout << std::endl;
+
+    BinarySearchTree<std::string> binarySearchTreeWithString;
+    binarySearchTreeWithString.traverse();
+    binarySearchTreeWithString.insert("ok");
+    binarySearchTreeWithString.insert("okee");
+    binarySearchTreeWithString.insert("oke");
+    binarySearchTreeWithString.insert("okeeeeee");
+    binarySearchTreeWithString.insert("o");
+    binarySearchTreeWithString.traverse();
 }

@@ -2,13 +2,13 @@
 
 namespace BST 
 {
-	struct Node
+	template <typename T> struct Node
 	{
-		int value{ 0 };
+		T value{ 0 };
 		Node* leftChild{ nullptr };
 		Node* rightChild{ nullptr };
 		Node() = default;
-		Node(int value, Node* leftChild, Node* rightChild) 
+		Node(T value, Node* leftChild, Node* rightChild) 
 			: value(value), leftChild(leftChild), rightChild(rightChild)
 		{}
 	};
