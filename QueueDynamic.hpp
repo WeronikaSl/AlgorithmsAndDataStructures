@@ -6,6 +6,8 @@
 //void dequeue();
 //void display() const;
 
+using namespace LinearDataStructure;
+
 template <typename T> class QueueDynamic
 {
 private:

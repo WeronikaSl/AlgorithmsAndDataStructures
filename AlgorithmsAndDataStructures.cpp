@@ -5,6 +5,7 @@
 #include "StackDynamic.hpp"
 #include "QueueStatic.hpp"
 #include "QueueDynamic.hpp"
+#include "BinarySearchTree.hpp"
 
 int main()
 {
@@ -86,7 +87,7 @@ int main()
     //std::cout << stackDynamicWithString.isEmpty() << std::endl;
 
     ////QUEUE STATIC
-    
+    //
     //QueueStatic<uint32_t> queueStatic;
     //std::cout << queueStatic.size() << std::endl;
     //std::cout << queueStatic.front() << std::endl;
@@ -134,15 +135,25 @@ int main()
     //queueDynamicWithInt.dequeue();
     //queueDynamicWithInt.dequeue();
 
-    QueueDynamic<std::string> queueDynamicWithString;
-    queueDynamicWithString.enqueue("ok");
-    queueDynamicWithString.display();
-    queueDynamicWithString.enqueue("okeee");
-    queueDynamicWithString.enqueue("okeeey");
-    queueDynamicWithString.display();
-    queueDynamicWithString.dequeue();
-    queueDynamicWithString.display();
-    queueDynamicWithString.dequeue();
-    queueDynamicWithString.dequeue();
-    queueDynamicWithString.dequeue();
+    //QueueDynamic<std::string> queueDynamicWithString;
+    //queueDynamicWithString.enqueue("ok");
+    //queueDynamicWithString.display();
+    //queueDynamicWithString.enqueue("okeee");
+    //queueDynamicWithString.enqueue("okeeey");
+    //queueDynamicWithString.display();
+    //queueDynamicWithString.dequeue();
+    //queueDynamicWithString.display();
+    //queueDynamicWithString.dequeue();
+    //queueDynamicWithString.dequeue();
+    //queueDynamicWithString.dequeue();
+
+    ////BINARY SEARCH TREE
+
+    BinarySearchTree binarySearchTree;
+    binarySearchTree.insert(10);
+    binarySearchTree.insert(2);
+    binarySearchTree.insert(55);
+    binarySearchTree.insert(4);
+    binarySearchTree.insert(8);
+    binarySearchTree.insert(99);
 }

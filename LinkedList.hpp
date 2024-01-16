@@ -11,6 +11,8 @@
 //void popFront();
 //void removeFromPosition(uint64_t);
 
+using namespace LinearDataStructure;
+
 template <typename T> class LinkedList
 {
 private:

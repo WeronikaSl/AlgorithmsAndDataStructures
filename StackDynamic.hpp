@@ -7,6 +7,8 @@
 //T peek() const;
 //bool isEmpty() const;
 
+using namespace LinearDataStructure;
+
 template <typename T> class StackDynamic
 {
 private:

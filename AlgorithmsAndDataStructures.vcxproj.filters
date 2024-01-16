@@ -38,5 +38,11 @@
     <ClInclude Include="QueueDynamic.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="NodeTree.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BinarySearchTree.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
