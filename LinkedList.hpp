@@ -5,11 +5,12 @@
 //Avaliable methods:
 //void pushBack(T);
 //void pushFront(T);
-//void displayelements();
+//void displayElements() const;
 //void insert(uint64_t, T);
 //void removeValue(T);
 //void popFront();
 //void removeFromPosition(uint64_t);
+//Node<T>* find(T) const; //needs fixing
 
 using namespace LinearDataStructure;
 
@@ -47,14 +48,14 @@ public:
 			head = newHead;
 		}
 	}
-	void displayElements()
+	void displayElements() const
 	{
 		if (head != nullptr)
 		{
 			Node<T>* currentNode{ head };
 			while (currentNode != nullptr)
 			{
-				std::cout << currentNode->valueOfThisNode << std::endl;
+				std::cout << currentNode->valueOfThisNode << " ";
 				currentNode = currentNode->locationOfNextNode;
 			}
 		}
@@ -76,7 +77,7 @@ public:
 			previousNodesPosition->locationOfNextNode = newNode;
 		}
 	}
-	void removeValue(T valueToRemove)
+	void removeValue(T valueToRemove) //what if theres no such value in the list?
 	{
 		if (head != nullptr)
 		{
@@ -138,6 +139,19 @@ public:
 			}
 		}
 	}
+	//Node<T>* find(T value) const //FIX THIS METHOD
+	//{
+	//	Node<T>* result{ head };
+	//	if ((head != nullptr) && (head->valueOfThisNode != value))
+	//	{
+	//		do
+	//		{
+	//			result = result->locationOfNextNode;
+
+	//		} while ((result->valueOfThisNode != value) && (result-> != nullptr));
+	//	}
+	//	return result;
+	//}
 	~LinkedList()
 	{
 		if (head != nullptr) 

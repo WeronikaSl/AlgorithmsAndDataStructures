@@ -6,6 +6,8 @@
 #include "QueueStatic.hpp"
 #include "QueueDynamic.hpp"
 #include "BinarySearchTree.hpp"
+#include "GraphAdjacencyMatrix.hpp"
+#include "GraphAdjacencyList.hpp"
 
 int main()
 {
@@ -16,6 +18,7 @@ int main()
     //linkedListWithInts.popFront(); //head is a nullptr, checks if no error
     //linkedListWithInts.displayElements();
 
+    //linkedListWithInts.pushBack(22);
     //linkedListWithInts.pushBack(6);
     //linkedListWithInts.displayElements();
 
@@ -43,7 +46,7 @@ int main()
     //linkedListWithStrings.displayElements();
 
     ////STACK STATIC
-    //StackStatic<uint16_t> stackStaticWithInt;
+    //staticDS::Stack<uint16_t> stackStaticWithInt;
     //std::cout << stackStaticWithInt.top() << std::endl;
     //stackStaticWithInt.pop();
     //std::cout << stackStaticWithInt.size() << std::endl;
@@ -54,7 +57,7 @@ int main()
     //std::cout << stackStaticWithInt.top() << std::endl;
     //std::cout << stackStaticWithInt.size() << std::endl;
 
-    //StackStatic<std::string> stackStaticWithString;
+    //staticDS::Stack<std::string> stackStaticWithString;
     //stackStaticWithString.push("Hi");
     //std::cout << stackStaticWithString.top() << std::endl;
     //stackStaticWithString.pop();
@@ -62,7 +65,7 @@ int main()
     //std::cout << stackStaticWithString.top() << std::endl;
 
     ////STACK DYNAMIC
-    //StackDynamic<uint16_t> stackDynamicWithInt;
+    //dynamicDS::Stack<uint16_t> stackDynamicWithInt;
     //std::cout << stackDynamicWithInt.peek() << std::endl;
     //std::cout << stackDynamicWithInt.isEmpty() << std::endl;
     //stackDynamicWithInt.pop();
@@ -74,7 +77,7 @@ int main()
     //std::cout << stackDynamicWithInt.peek() << std::endl;
     //std::cout << stackDynamicWithInt.isEmpty() << std::endl;
 
-    //StackDynamic<std::string> stackDynamicWithString;
+    //dynamicDS::Stack<std::string> stackDynamicWithString;
     //std::cout << stackDynamicWithString.peek() << std::endl;
     //std::cout << stackDynamicWithString.isEmpty() << std::endl;
     //stackDynamicWithString.pop();
@@ -87,8 +90,8 @@ int main()
     //std::cout << stackDynamicWithString.isEmpty() << std::endl;
 
     ////QUEUE STATIC
-    //
-    //QueueStatic<uint32_t> queueStatic;
+    
+    //staticDS::Queue<uint32_t> queueStatic;
     //std::cout << queueStatic.size() << std::endl;
     //std::cout << queueStatic.front() << std::endl;
     //std::cout << queueStatic.end() << std::endl;
@@ -102,7 +105,7 @@ int main()
     //std::cout << queueStatic.front() << std::endl;
     //std::cout << queueStatic.end() << std::endl;
 
-    //QueueStatic<std::string> queueStaticWithString;
+    //staticDS::Queue<std::string> queueStaticWithString;
     //std::cout << queueStaticWithString.size() << std::endl;
     //std::cout << queueStaticWithString.front() << std::endl;
     //std::cout << queueStaticWithString.end() << std::endl;
@@ -123,7 +126,7 @@ int main()
 
     //// QUEUE DYNAMIC
 
-    //QueueDynamic<uint32_t> queueDynamicWithInt;
+    //dynamicDS::Queue<uint32_t> queueDynamicWithInt;
     //queueDynamicWithInt.display();
     //queueDynamicWithInt.enqueue(10);
     //queueDynamicWithInt.enqueue(55);
@@ -135,7 +138,7 @@ int main()
     //queueDynamicWithInt.dequeue();
     //queueDynamicWithInt.dequeue();
 
-    //QueueDynamic<std::string> queueDynamicWithString;
+    //dynamicDS::Queue<std::string> queueDynamicWithString;
     //queueDynamicWithString.enqueue("ok");
     //queueDynamicWithString.display();
     //queueDynamicWithString.enqueue("okeee");
@@ -149,24 +152,49 @@ int main()
 
     ////BINARY SEARCH TREE
 
-    BinarySearchTree<uint16_t> binarySearchTreeWithInt;
-    binarySearchTreeWithInt.traverse();
-    binarySearchTreeWithInt.insert(10);
-    binarySearchTreeWithInt.insert(2);
-    binarySearchTreeWithInt.insert(55);
-    binarySearchTreeWithInt.insert(4);
-    binarySearchTreeWithInt.insert(8);
-    binarySearchTreeWithInt.insert(99);
-    binarySearchTreeWithInt.traverse();
+    //BinarySearchTree<uint16_t> binarySearchTreeWithInt;
+    //binarySearchTreeWithInt.traverse();
+    //binarySearchTreeWithInt.insert(10);
+    //binarySearchTreeWithInt.insert(2);
+    //binarySearchTreeWithInt.insert(55);
+    //binarySearchTreeWithInt.insert(4);
+    //binarySearchTreeWithInt.insert(8);
+    //binarySearchTreeWithInt.insert(99);
+    //binarySearchTreeWithInt.traverse();
 
+    //std::cout << std::endl;
+
+    //BinarySearchTree<std::string> binarySearchTreeWithString;
+    //binarySearchTreeWithString.traverse();
+    //binarySearchTreeWithString.insert("ok");
+    //binarySearchTreeWithString.insert("okee");
+    //binarySearchTreeWithString.insert("oke");
+    //binarySearchTreeWithString.insert("okeeeeee");
+    //binarySearchTreeWithString.insert("o");
+    //binarySearchTreeWithString.traverse();
+
+    ////GRAPH ADJACENCY MATRIX
+
+    //adjacencyMatrix::Graph graphAdjacencyMatrix;
+    //graphAdjacencyMatrix.display();
+    //graphAdjacencyMatrix.connectElements(2,200);
+    //graphAdjacencyMatrix.connectElements(1, 20);
+    //graphAdjacencyMatrix.connectElements(0, 10);
+    //graphAdjacencyMatrix.connectElements(2, 1);
+    //graphAdjacencyMatrix.display();
+
+    ////GRAPH ADJACENCY LIST
+
+    adjacencyList::Graph graphAdjacencyList;
+    graphAdjacencyList.display();
     std::cout << std::endl;
-
-    BinarySearchTree<std::string> binarySearchTreeWithString;
-    binarySearchTreeWithString.traverse();
-    binarySearchTreeWithString.insert("ok");
-    binarySearchTreeWithString.insert("okee");
-    binarySearchTreeWithString.insert("oke");
-    binarySearchTreeWithString.insert("okeeeeee");
-    binarySearchTreeWithString.insert("o");
-    binarySearchTreeWithString.traverse();
+    graphAdjacencyList.connectElements(1, 4);
+    graphAdjacencyList.connectElements(1, 3);
+    graphAdjacencyList.connectElements(2, 1);
+    graphAdjacencyList.display();
+    graphAdjacencyList.connectElements(-1, 4);
+    graphAdjacencyList.connectElements(1, 6);
+    graphAdjacencyList.disconnectElements(1, 4);
+    graphAdjacencyList.display();
+    //graphAdjacencyList.disconnectElements(1, 4); //error due to error in linked list, needs fixing, unit tests would be helpful to test corner cases
 }

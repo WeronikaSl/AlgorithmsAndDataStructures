@@ -1,6 +1,10 @@
 #pragma once
 #include "NodeTree.hpp"
 
+//Avaliable methods:
+//void insert(T);
+//void traverse() const;
+
 using namespace BST;  //why doesnt this work?
 
 template <typename T> class BinarySearchTree
