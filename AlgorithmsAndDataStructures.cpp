@@ -8,6 +8,9 @@
 #include "BinarySearchTree.hpp"
 #include "GraphAdjacencyMatrix.hpp"
 #include "GraphAdjacencyList.hpp"
+#include <unordered_map>
+#include "HashFunction.hpp"
+#include "HashTable.hpp"
 
 int main()
 {
@@ -185,16 +188,39 @@ int main()
 
     ////GRAPH ADJACENCY LIST
 
-    adjacencyList::Graph graphAdjacencyList;
-    graphAdjacencyList.display();
-    std::cout << std::endl;
-    graphAdjacencyList.connectElements(1, 4);
-    graphAdjacencyList.connectElements(1, 3);
-    graphAdjacencyList.connectElements(2, 1);
-    graphAdjacencyList.display();
-    graphAdjacencyList.connectElements(-1, 4);
-    graphAdjacencyList.connectElements(1, 6);
-    graphAdjacencyList.disconnectElements(1, 4);
-    graphAdjacencyList.display();
+    //adjacencyList::Graph graphAdjacencyList;
+    //graphAdjacencyList.display();
+    //std::cout << std::endl;
+    //graphAdjacencyList.connectElements(1, 4);
+    //graphAdjacencyList.connectElements(1, 3);
+    //graphAdjacencyList.connectElements(2, 1);
+    //graphAdjacencyList.display();
+    //graphAdjacencyList.connectElements(-1, 4);
+    //graphAdjacencyList.connectElements(1, 6);
+    //graphAdjacencyList.disconnectElements(1, 4);
+    //graphAdjacencyList.display();
     //graphAdjacencyList.disconnectElements(1, 4); //error due to error in linked list, needs fixing, unit tests would be helpful to test corner cases
+
+    ////UNORDERED MAP
+    //SomeData data;
+    //data.dataString = "hi";
+    //std::unordered_map<SomeData, bool> unorderedMap;
+    
+    
+    ////HASH TABLE
+    HashTable hashTable;
+    hashTable.insert(99, "Michael Scott");
+    hashTable.insert(54, "Dwight Schrute");
+    hashTable.insert(18, "Pam Beesly");
+    hashTable.insert(46, "Jim Halpert");
+    hashTable.insert(46, "Jim Halpert");
+    hashTable.insert(18, "Ryan Howard");
+    hashTable.print();
+    std::cout << std::endl;
+    std::cout << "Find employee with ID 46: " << hashTable.find(46) << std::endl;
+    std::cout << "Find employee with ID 18: " << hashTable.find(18) << std::endl;
+    std::cout << std::endl;
+    hashTable.remove(54);
+    hashTable.remove(54);
+    hashTable.print();
 }
