@@ -75,7 +75,6 @@ namespace dynamicDS
 					currentNode = currentNode->locationOfNextNode;
 					delete nodeToDelete;
 				}
-				delete currentNode;
 				top = nullptr;
 				nodeToDelete = nullptr;
 				currentNode = nullptr;
