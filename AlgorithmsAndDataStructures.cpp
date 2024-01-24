@@ -11,6 +11,8 @@
 #include <unordered_map>
 #include "HashFunction.hpp"
 #include "HashTable.hpp"
+#include "SearchingAlgorithms.hpp"
+#include "SortingAlgorithms.hpp"
 
 int main()
 {
@@ -208,19 +210,48 @@ int main()
     
     
     ////HASH TABLE
-    HashTable hashTable;
-    hashTable.insert(99, "Michael Scott");
-    hashTable.insert(54, "Dwight Schrute");
-    hashTable.insert(18, "Pam Beesly");
-    hashTable.insert(46, "Jim Halpert");
-    hashTable.insert(46, "Jim Halpert");
-    hashTable.insert(18, "Ryan Howard");
-    hashTable.print();
-    std::cout << std::endl;
-    std::cout << "Find employee with ID 46: " << hashTable.find(46) << std::endl;
-    std::cout << "Find employee with ID 18: " << hashTable.find(18) << std::endl;
-    std::cout << std::endl;
-    hashTable.remove(54);
-    hashTable.remove(54);
-    hashTable.print();
+    //HashTable hashTable;
+    //hashTable.insert(99, "Michael Scott");
+    //hashTable.insert(54, "Dwight Schrute");
+    //hashTable.insert(18, "Pam Beesly");
+    //hashTable.insert(46, "Jim Halpert");
+    //hashTable.insert(46, "Jim Halpert");
+    //hashTable.insert(18, "Ryan Howard");
+    //hashTable.print();
+    //std::cout << std::endl;
+    //std::cout << "Find employee with ID 46: " << hashTable.find(46) << std::endl;
+    //std::cout << "Find employee with ID 18: " << hashTable.find(18) << std::endl;
+    //std::cout << std::endl;
+    //hashTable.remove(54);
+    //hashTable.remove(54);
+    //hashTable.print();
+
+    ////LINEAR SEARCH
+    //std::vector<uint16_t> vec{ 5,7,3,4,1,6,2,8 };
+    //std::cout << linearSearch<uint16_t>(vec, 3) << std::endl;
+    //std::cout << linearSearch<uint16_t>(vec, 9) << std::endl;
+
+    ////BINARY SEARCH ITERATIVE
+    //constexpr int sizeOfArray{ 6 };
+    //int arr[sizeOfArray]{ 1,3,5,7,9,11 }; //has to be sorted to use binary search!
+    //std::cout << searchBinaryIterative(arr, sizeOfArray, 5) << std::endl;
+    //std::cout << searchBinaryIterative(arr, sizeOfArray, 10) << std::endl;
+
+    ////BINARY SEARCH RECURSION
+    //constexpr int sizeOfArray{ 6 };
+    //int arr[sizeOfArray]{ 1,3,5,7,9,11 }; //has to be sorted to use binary search!
+    //int low{ 0 };
+    //int high{ sizeOfArray - 1 };
+    //std::cout << searchBinaryRecursion(arr, low, high, 5) << std::endl;
+    //std::cout << searchBinaryRecursion(arr, low, high, 10) << std::endl;
+    
+    ////BUBBLE SORT
+    constexpr int sizeOfArray{ 5 };
+    int arr[sizeOfArray]{ 3,5,1,4,2 };
+    bubbleSort(arr, sizeOfArray);
+
+    for (int i{ 0 }; i < sizeOfArray; i++)
+    {
+	    std::cout << arr[i] << " ";
+    }
 }

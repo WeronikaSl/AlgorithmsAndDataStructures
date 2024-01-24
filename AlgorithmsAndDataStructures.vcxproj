@@ -142,6 +142,8 @@
     <ClInclude Include="NodeTree.hpp" />
     <ClInclude Include="QueueDynamic.hpp" />
     <ClInclude Include="QueueStatic.hpp" />
+    <ClInclude Include="SearchingAlgorithms.hpp" />
+    <ClInclude Include="SortingAlgorithms.hpp" />
     <ClInclude Include="StackDynamic.hpp" />
     <ClInclude Include="StackStatic.hpp" />
     <ClInclude Include="HashFunction.hpp" />
