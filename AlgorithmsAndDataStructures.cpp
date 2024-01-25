@@ -246,12 +246,47 @@ int main()
     //std::cout << searchBinaryRecursion(arr, low, high, 10) << std::endl;
     
     ////BUBBLE SORT
+    //constexpr int sizeOfArray{ 5 };
+    //int arr[sizeOfArray]{ 3,5,1,4,2 };
+    //bubbleSort(arr, sizeOfArray);
+    //for (int i{ 0 }; i < sizeOfArray; i++)
+    //{
+	   // std::cout << arr[i] << " ";
+    //}
+
+    ////QUICK SORT
+    //constexpr int sizeOfArray{ 5 };
+    //int arr[sizeOfArray]{ 3,5,1,4,2 };
+    //int first = 0; 
+    //int last = sizeOfArray-1;
+
+    //quickSort(arr, first, last);
+
+    //for (int i{ 0 }; i < sizeOfArray; i++)
+    //{
+    //    std::cout << arr[i] << " ";
+    //}
+    
+    ////SELECTION SORT
+    //constexpr int sizeOfArray{ 5 };
+    //int arr[sizeOfArray]{ 3,5,1,4,2 };
+
+    //selectionSort(arr, sizeOfArray);
+    //for (int i{ 0 }; i < sizeOfArray; i++)
+    //{
+    //    std::cout << arr[i] << " ";
+    //}
+    
+    ////INSERTION SORT
     constexpr int sizeOfArray{ 5 };
     int arr[sizeOfArray]{ 3,5,1,4,2 };
-    bubbleSort(arr, sizeOfArray);
+
+    insertionSort(arr, sizeOfArray);
 
     for (int i{ 0 }; i < sizeOfArray; i++)
     {
-	    std::cout << arr[i] << " ";
+        std::cout << arr[i] << " ";
     }
+
+
 }
