@@ -278,15 +278,29 @@ int main()
     //}
     
     ////INSERTION SORT
+    //constexpr int sizeOfArray{ 5 };
+    //int arr[sizeOfArray]{ 3,5,1,4,2 };
+
+    //insertionSort(arr, sizeOfArray);
+
+    //for (int i{ 0 }; i < sizeOfArray; i++)
+    //{
+    //    std::cout << arr[i] << " ";
+    //}
+    
+    ////MERGE SORT
     constexpr int sizeOfArray{ 5 };
     int arr[sizeOfArray]{ 3,5,1,4,2 };
+    int low{ 0 };
+    int high{ sizeOfArray - 1 };
 
-    insertionSort(arr, sizeOfArray);
+    mergeSort(arr, low, high);
 
     for (int i{ 0 }; i < sizeOfArray; i++)
     {
         std::cout << arr[i] << " ";
     }
+    
 
 
 }

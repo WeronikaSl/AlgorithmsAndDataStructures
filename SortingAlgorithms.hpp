@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <vector>
 
 
 //Algorithms:
@@ -7,7 +8,7 @@
 //quickSort
 //selectionSort
 //insertionSort
-//
+//mergeSort
 
 
 void bubbleSort(int arr[], int size)
@@ -24,7 +25,7 @@ void bubbleSort(int arr[], int size)
     }
 }
 
-int partition(int arr[], int first, int last) //helper function, will return index of pivot
+int partition(int arr[], int first, int last) //helper function for quickSort, will return index of pivot
 {
     int pivot = arr[last];
     int newPivotIndex = first;
@@ -84,5 +85,59 @@ void insertionSort(int arr[], int sizeOfArray)
             k--;
         }
         arr[k + 1] = currentValue;
+    }
+}
+
+void merge(int arr[], int low, int middle, int high) //helper function to mergeSort()
+{
+    int i = low; //starting index for left subarray
+    int j = middle + 1; //starting index for right subarray
+    int k = low; //starting index for temporary array
+
+    //const int sizeOfTempArr{ high - low + 1 };
+    int tempArray[5]{}; //hardcoded, how can I change it..? by passing size?
+
+    while ((i <= middle) && (j <= high))
+    {
+        if (arr[i] <= arr[j])
+        {
+            tempArray[k] = arr[i];
+            i++;
+            k++;
+        }
+        else
+        {
+            tempArray[k] = arr[j];
+            j++;
+            k++;
+        }
+    }
+    while (i <= middle)
+    {
+        tempArray[k] = arr[i];
+        i++;
+        k++;
+    }
+    while (j <= high)
+    {
+        tempArray[k] = arr[j];
+        j++;
+        k++;
+    }
+
+    for (int s{ low }; s <= high; s++)
+    {
+        arr[s] = tempArray[s];
+    }
+}
+
+void mergeSort(int arr[], int low, int high)
+{
+    if(low < high)
+    {
+        int middle {(low + high)/2};
+        mergeSort(arr, low, middle);
+        mergeSort(arr, middle+1, high);
+        merge(arr, low, middle, high);
     }
 }
