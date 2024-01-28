@@ -158,6 +158,7 @@ int main()
     ////BINARY SEARCH TREE
 
     BinarySearchTree<uint16_t> binarySearchTreeWithInt;
+    binarySearchTreeWithInt.traverseBFS();
     binarySearchTreeWithInt.traverseInOrder();
     binarySearchTreeWithInt.insert(10);
     binarySearchTreeWithInt.insert(2);
@@ -173,10 +174,12 @@ int main()
     std::cout << std::endl;
     std::cout << binarySearchTreeWithInt.find(55) << std::endl;
     std::cout << binarySearchTreeWithInt.find(3) << std::endl;
+    binarySearchTreeWithInt.traverseBFS();
 
     std::cout << std::endl;
 
     BinarySearchTree<std::string> binarySearchTreeWithString;
+    binarySearchTreeWithString.traverseBFS();
     binarySearchTreeWithString.traverseInOrder();
     binarySearchTreeWithString.insert("ok");
     binarySearchTreeWithString.insert("okee");
@@ -191,6 +194,7 @@ int main()
     std::cout << std::endl;
     std::cout << binarySearchTreeWithString.find("ok") << std::endl;
     std::cout << binarySearchTreeWithString.find("oki") << std::endl;
+    binarySearchTreeWithString.traverseBFS();
 
 
     ////GRAPH ADJACENCY MATRIX

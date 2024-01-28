@@ -1,5 +1,6 @@
 #pragma once
 #include "NodeTree.hpp"
+#include <queue>
 
 //Avaliable methods:
 //void insert(T);
@@ -7,6 +8,7 @@
 //void traversePreOrder() const;
 //void traversePostOrder() const;
 //bool find(T) const;
+//void traverseBFS() const;
 
 using namespace BST;  //why doesnt this work?
 
@@ -120,6 +122,30 @@ public:
 	bool find(T value) const
 	{
 		return findNode(root, value);
+	}
+	void traverseBFS() const
+	{
+		if (root != nullptr)
+		{
+			std::queue<BST::Node<T>*> queue{};
+			queue.push(root);
+			BST::Node<T>* tempNode{ nullptr };
+
+			while (!queue.empty())
+			{
+				tempNode = queue.front();
+				std::cout << tempNode->value << " ";
+				queue.pop();
+				if (tempNode->leftChild != nullptr)
+				{
+					queue.push(tempNode->leftChild);
+				}
+				if (tempNode->rightChild != nullptr)
+				{
+					queue.push(tempNode->rightChild);
+				}
+			}
+		}
 	}
 	~BinarySearchTree() = default; //has to free the memory to prevent memory leak! use post order traversal?
 };
