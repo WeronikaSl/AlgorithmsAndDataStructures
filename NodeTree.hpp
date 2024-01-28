@@ -4,7 +4,7 @@ namespace BST
 {
 	template <typename T> struct Node
 	{
-		T value{ 0 };
+		T value{};
 		Node* leftChild{ nullptr };
 		Node* rightChild{ nullptr };
 		Node() = default;

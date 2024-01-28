@@ -157,26 +157,34 @@ int main()
 
     ////BINARY SEARCH TREE
 
-    //BinarySearchTree<uint16_t> binarySearchTreeWithInt;
-    //binarySearchTreeWithInt.traverse();
-    //binarySearchTreeWithInt.insert(10);
-    //binarySearchTreeWithInt.insert(2);
-    //binarySearchTreeWithInt.insert(55);
-    //binarySearchTreeWithInt.insert(4);
-    //binarySearchTreeWithInt.insert(8);
-    //binarySearchTreeWithInt.insert(99);
-    //binarySearchTreeWithInt.traverse();
+    BinarySearchTree<uint16_t> binarySearchTreeWithInt;
+    binarySearchTreeWithInt.traverseInOrder();
+    binarySearchTreeWithInt.insert(10);
+    binarySearchTreeWithInt.insert(2);
+    binarySearchTreeWithInt.insert(55);
+    binarySearchTreeWithInt.insert(4);
+    binarySearchTreeWithInt.insert(8);
+    binarySearchTreeWithInt.insert(99);
+    binarySearchTreeWithInt.traverseInOrder();
+    std::cout << std::endl;
+    binarySearchTreeWithInt.traversePreOrder();
+    std::cout << std::endl;
+    binarySearchTreeWithInt.traversePostOrder();
 
-    //std::cout << std::endl;
+    std::cout << std::endl;
 
-    //BinarySearchTree<std::string> binarySearchTreeWithString;
-    //binarySearchTreeWithString.traverse();
-    //binarySearchTreeWithString.insert("ok");
-    //binarySearchTreeWithString.insert("okee");
-    //binarySearchTreeWithString.insert("oke");
-    //binarySearchTreeWithString.insert("okeeeeee");
-    //binarySearchTreeWithString.insert("o");
-    //binarySearchTreeWithString.traverse();
+    BinarySearchTree<std::string> binarySearchTreeWithString;
+    binarySearchTreeWithString.traverseInOrder();
+    binarySearchTreeWithString.insert("ok");
+    binarySearchTreeWithString.insert("okee");
+    binarySearchTreeWithString.insert("oke");
+    binarySearchTreeWithString.insert("okeeeeee");
+    binarySearchTreeWithString.insert("o");
+    binarySearchTreeWithString.traverseInOrder();
+    std::cout << std::endl;
+    binarySearchTreeWithString.traversePreOrder();
+    std::cout << std::endl;
+    binarySearchTreeWithString.traversePostOrder();
 
     ////GRAPH ADJACENCY MATRIX
 
@@ -289,18 +297,16 @@ int main()
     //}
     
     ////MERGE SORT
-    constexpr int sizeOfArray{ 5 };
-    int arr[sizeOfArray]{ 3,5,1,4,2 };
-    int low{ 0 };
-    int high{ sizeOfArray - 1 };
+    //constexpr int sizeOfArray{ 5 };
+    //int arr[sizeOfArray]{ 3,5,1,4,2 };
+    //int low{ 0 };
+    //int high{ sizeOfArray - 1 };
 
-    mergeSort(arr, low, high);
+    //mergeSort(arr, low, high);
 
-    for (int i{ 0 }; i < sizeOfArray; i++)
-    {
-        std::cout << arr[i] << " ";
-    }
+    //for (int i{ 0 }; i < sizeOfArray; i++)
+    //{
+    //    std::cout << arr[i] << " ";
+    //}
     
-
-
 }

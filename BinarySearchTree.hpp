@@ -14,7 +14,7 @@ private:
 
 	void insertNewNode(BST::Node<T>** node, T value) //is it correct to create pointer to pointer? temporary solution to fix SIGSEGV, refactor later
 	{
-		if (*node == nullptr) //will only happen in case of root?
+		if (*node == nullptr) //tree is empty
 		{
 			*node = createNode(value);
 		}
@@ -47,16 +47,34 @@ private:
 	{
 		BST::Node<T>* leftChild{ nullptr };
 		BST::Node<T>* rightChild{ nullptr };
-		BST::Node<T>* newNode = new BST::Node<T>(value, leftChild, rightChild); //is it ok? Client shouldn't be responsible for freeing memory
-		return newNode;
+		BST::Node<T>* result = new BST::Node<T>(value, leftChild, rightChild); //is it ok? Client shouldn't be responsible for freeing memory
+		return result;
 	}
-	void traverseInOrder(BST::Node<T>* node) const
+	void inOrderTraversal(BST::Node<T>* node) const 
 	{
 		if (node != nullptr)
 		{
-			traverseInOrder(node->leftChild);
+			inOrderTraversal(node->leftChild);
 			std::cout << node->value << " ";
-			traverseInOrder(node->rightChild);
+			inOrderTraversal(node->rightChild);
+		}
+	}
+	void preOrderTraversal(BST::Node<T>* node) const
+	{
+		if (node != nullptr)
+		{
+			std::cout << node->value << " ";
+			preOrderTraversal(node->leftChild);
+			preOrderTraversal(node->rightChild);
+		}
+	}
+	void postOrderTraversal(BST::Node<T>* node) const
+	{
+		if (node != nullptr)
+		{
+			postOrderTraversal(node->leftChild);
+			postOrderTraversal(node->rightChild);
+			std::cout << node->value << " ";
 		}
 	}
 public:
@@ -65,9 +83,17 @@ public:
 		BST::Node<T>** ptrToRoot = &root;
 		insertNewNode(ptrToRoot, value);
 	}
-	void traverse() const
+	void traverseInOrder() const
 	{
-		traverseInOrder(root);
+		inOrderTraversal(root);
 	}
-	~BinarySearchTree() = default; //has to free the memory to prevent memory leak!
+	void traversePreOrder() const
+	{
+		preOrderTraversal(root);
+	}
+	void traversePostOrder() const
+	{
+		postOrderTraversal(root);
+	}
+	~BinarySearchTree() = default; //has to free the memory to prevent memory leak! use post order traversal?
 };
