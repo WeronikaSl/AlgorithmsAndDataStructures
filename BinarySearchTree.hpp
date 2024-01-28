@@ -9,6 +9,7 @@
 //void traversePostOrder() const;
 //bool find(T) const;
 //void traverseBFS() const;
+//BST::Node<T>* remove(T);
 
 using namespace BST;  //why doesnt this work?
 
