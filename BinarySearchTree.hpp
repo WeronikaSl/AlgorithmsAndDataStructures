@@ -101,6 +101,71 @@ private:
 			return findNode(node->rightChild, value);
 		}
 	}
+	BST::Node<T>* findMinValue(BST::Node<T>* node)
+	{
+		while (node->leftChild != nullptr)
+		{
+			node = node->leftChild;
+		}
+		return node;
+	}
+	BST::Node<T>* removeValue(BST::Node<T>** node, T value)
+	{
+		if ((*node) == nullptr)
+		{
+			return (*node);
+		}
+		else if (value < (*node)->value) //the value to delete is in left subtree
+		{
+			(*node)->leftChild = removeValue(&((*node)->leftChild), value);
+		}
+		else if (value > (*node)->value) //the value to delete is in right subtree
+		{
+			(*node)->rightChild = removeValue(&((*node)->rightChild), value);
+		}
+		else //the value to delete is found!
+		{
+			//Case 1 - node to delete has no children
+			if ((*node)->leftChild == nullptr && (*node)->rightChild == nullptr)
+			{
+				delete (*node);
+				(*node) = nullptr;
+			}
+			//Case 2 - node to delete has 1 child
+			else if ((*node)->leftChild == nullptr) //right child has to replace node to delete
+			{
+				BST::Node<T>* tempNode{ (*node) };
+				(*node) = (*node)->rightChild;
+				delete tempNode;
+				tempNode = nullptr;
+			}
+			else if ((*node)->rightChild == nullptr) //left child has to replace node to delete
+			{
+				BST::Node<T>* tempNode{ (*node) };
+				(*node) = (*node)->leftChild;
+				delete tempNode;
+				tempNode = nullptr;
+			}
+			//Case 3 - node to delete has 2 children
+			else
+			{
+				BST::Node<T>* tempNode{ findMinValue((*node)->rightChild) }; //find minimum value in right subtree to replace the root
+				(*node)->value = tempNode->value;
+				(*node)->rightChild = removeValue(&(*node)->rightChild, tempNode->value);
+			}
+		}
+		return (*node);
+	}
+	void freeMemory(BST::Node<T>** node) //postOrderTraversal
+	{
+		if ((*node) != nullptr)
+		{
+			freeMemory(&((*node)->leftChild));
+			freeMemory(&((*node)->rightChild));
+			delete (*node);
+			(*node) = nullptr;
+		}
+	}
 public:
 	void insert(T value)
 	{
@@ -147,5 +212,12 @@ public:
 			}
 		}
 	}
-	~BinarySearchTree() = default; //has to free the memory to prevent memory leak! use post order traversal?
+	BST::Node<T>* remove(T value)
+	{
+		return removeValue(&root, value);
+	}
+	~BinarySearchTree()
+	{
+		freeMemory(&root);
+	}
 };

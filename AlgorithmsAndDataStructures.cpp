@@ -175,6 +175,7 @@ int main()
     std::cout << binarySearchTreeWithInt.find(55) << std::endl;
     std::cout << binarySearchTreeWithInt.find(3) << std::endl;
     binarySearchTreeWithInt.traverseBFS();
+    std::cout << std::endl << "New root: " << binarySearchTreeWithInt.remove(10)->value << std::endl;
 
     std::cout << std::endl;
 
@@ -195,6 +196,12 @@ int main()
     std::cout << binarySearchTreeWithString.find("ok") << std::endl;
     std::cout << binarySearchTreeWithString.find("oki") << std::endl;
     binarySearchTreeWithString.traverseBFS();
+    std::cout << std::endl << "New root: " << binarySearchTreeWithString.remove("ok")->value << std::endl;
+    std::cout << std::endl << "New root: " << binarySearchTreeWithString.remove("oke")->value << std::endl;
+    std::cout << std::endl << "New root: " << binarySearchTreeWithString.remove("okee")->value << std::endl;
+    std::cout << std::endl << "New root: " << binarySearchTreeWithString.remove("okeeeeee")->value << std::endl;
+    std::cout << std::endl << "New root: " << binarySearchTreeWithString.remove("o") << std::endl; //nullptr, tree is now empty
+
 
 
     ////GRAPH ADJACENCY MATRIX
