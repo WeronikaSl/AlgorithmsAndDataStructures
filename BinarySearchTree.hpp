@@ -3,7 +3,10 @@
 
 //Avaliable methods:
 //void insert(T);
-//void traverse() const;
+//void traverseInOrder() const;
+//void traversePreOrder() const;
+//void traversePostOrder() const;
+//bool find(T) const;
 
 using namespace BST;  //why doesnt this work?
 
@@ -77,6 +80,25 @@ private:
 			std::cout << node->value << " ";
 		}
 	}
+	bool findNode(BST::Node<T>* node, T value) const
+	{
+		if (node == nullptr)
+		{
+			return false;
+		}
+		else if (node->value == value)
+		{
+			return true;
+		}
+		else if (value < node->value)
+		{
+			return findNode(node->leftChild, value);
+		}
+		else
+		{
+			return findNode(node->rightChild, value);
+		}
+	}
 public:
 	void insert(T value)
 	{
@@ -94,6 +116,10 @@ public:
 	void traversePostOrder() const
 	{
 		postOrderTraversal(root);
+	}
+	bool find(T value) const
+	{
+		return findNode(root, value);
 	}
 	~BinarySearchTree() = default; //has to free the memory to prevent memory leak! use post order traversal?
 };

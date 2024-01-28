@@ -170,6 +170,9 @@ int main()
     binarySearchTreeWithInt.traversePreOrder();
     std::cout << std::endl;
     binarySearchTreeWithInt.traversePostOrder();
+    std::cout << std::endl;
+    std::cout << binarySearchTreeWithInt.find(55) << std::endl;
+    std::cout << binarySearchTreeWithInt.find(3) << std::endl;
 
     std::cout << std::endl;
 
@@ -185,6 +188,10 @@ int main()
     binarySearchTreeWithString.traversePreOrder();
     std::cout << std::endl;
     binarySearchTreeWithString.traversePostOrder();
+    std::cout << std::endl;
+    std::cout << binarySearchTreeWithString.find("ok") << std::endl;
+    std::cout << binarySearchTreeWithString.find("oki") << std::endl;
+
 
     ////GRAPH ADJACENCY MATRIX
 
