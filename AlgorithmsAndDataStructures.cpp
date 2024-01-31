@@ -157,50 +157,50 @@ int main()
 
     ////BINARY SEARCH TREE
 
-    BinarySearchTree<uint16_t> binarySearchTreeWithInt;
-    binarySearchTreeWithInt.traverseBFS();
-    binarySearchTreeWithInt.traverseInOrder();
-    binarySearchTreeWithInt.insert(10);
-    binarySearchTreeWithInt.insert(2);
-    binarySearchTreeWithInt.insert(55);
-    binarySearchTreeWithInt.insert(4);
-    binarySearchTreeWithInt.insert(8);
-    binarySearchTreeWithInt.insert(99);
-    binarySearchTreeWithInt.traverseInOrder();
-    std::cout << std::endl;
-    binarySearchTreeWithInt.traversePreOrder();
-    std::cout << std::endl;
-    binarySearchTreeWithInt.traversePostOrder();
-    std::cout << std::endl;
-    std::cout << binarySearchTreeWithInt.find(55) << std::endl;
-    std::cout << binarySearchTreeWithInt.find(3) << std::endl;
-    binarySearchTreeWithInt.traverseBFS();
-    std::cout << std::endl << "New root: " << binarySearchTreeWithInt.remove(10)->value << std::endl;
+    //BinarySearchTree<uint16_t> binarySearchTreeWithInt;
+    //binarySearchTreeWithInt.traverseBFS();
+    //binarySearchTreeWithInt.traverseInOrder();
+    //binarySearchTreeWithInt.insert(10);
+    //binarySearchTreeWithInt.insert(2);
+    //binarySearchTreeWithInt.insert(55);
+    //binarySearchTreeWithInt.insert(4);
+    //binarySearchTreeWithInt.insert(8);
+    //binarySearchTreeWithInt.insert(99);
+    //binarySearchTreeWithInt.traverseInOrder();
+    //std::cout << std::endl;
+    //binarySearchTreeWithInt.traversePreOrder();
+    //std::cout << std::endl;
+    //binarySearchTreeWithInt.traversePostOrder();
+    //std::cout << std::endl;
+    //std::cout << binarySearchTreeWithInt.find(55) << std::endl;
+    //std::cout << binarySearchTreeWithInt.find(3) << std::endl;
+    //binarySearchTreeWithInt.traverseBFS();
+    //std::cout << std::endl << "New root: " << binarySearchTreeWithInt.remove(10)->value << std::endl;
 
-    std::cout << std::endl;
+    //std::cout << std::endl;
 
-    BinarySearchTree<std::string> binarySearchTreeWithString;
-    binarySearchTreeWithString.traverseBFS();
-    binarySearchTreeWithString.traverseInOrder();
-    binarySearchTreeWithString.insert("ok");
-    binarySearchTreeWithString.insert("okee");
-    binarySearchTreeWithString.insert("oke");
-    binarySearchTreeWithString.insert("okeeeeee");
-    binarySearchTreeWithString.insert("o");
-    binarySearchTreeWithString.traverseInOrder();
-    std::cout << std::endl;
-    binarySearchTreeWithString.traversePreOrder();
-    std::cout << std::endl;
-    binarySearchTreeWithString.traversePostOrder();
-    std::cout << std::endl;
-    std::cout << binarySearchTreeWithString.find("ok") << std::endl;
-    std::cout << binarySearchTreeWithString.find("oki") << std::endl;
-    binarySearchTreeWithString.traverseBFS();
-    std::cout << std::endl << "New root: " << binarySearchTreeWithString.remove("ok")->value << std::endl;
-    std::cout << std::endl << "New root: " << binarySearchTreeWithString.remove("oke")->value << std::endl;
-    std::cout << std::endl << "New root: " << binarySearchTreeWithString.remove("okee")->value << std::endl;
-    std::cout << std::endl << "New root: " << binarySearchTreeWithString.remove("okeeeeee")->value << std::endl;
-    std::cout << std::endl << "New root: " << binarySearchTreeWithString.remove("o") << std::endl; //nullptr, tree is now empty
+    //BinarySearchTree<std::string> binarySearchTreeWithString;
+    //binarySearchTreeWithString.traverseBFS();
+    //binarySearchTreeWithString.traverseInOrder();
+    //binarySearchTreeWithString.insert("ok");
+    //binarySearchTreeWithString.insert("okee");
+    //binarySearchTreeWithString.insert("oke");
+    //binarySearchTreeWithString.insert("okeeeeee");
+    //binarySearchTreeWithString.insert("o");
+    //binarySearchTreeWithString.traverseInOrder();
+    //std::cout << std::endl;
+    //binarySearchTreeWithString.traversePreOrder();
+    //std::cout << std::endl;
+    //binarySearchTreeWithString.traversePostOrder();
+    //std::cout << std::endl;
+    //std::cout << binarySearchTreeWithString.find("ok") << std::endl;
+    //std::cout << binarySearchTreeWithString.find("oki") << std::endl;
+    //binarySearchTreeWithString.traverseBFS();
+    //std::cout << std::endl << "New root: " << binarySearchTreeWithString.remove("ok")->value << std::endl;
+    //std::cout << std::endl << "New root: " << binarySearchTreeWithString.remove("oke")->value << std::endl;
+    //std::cout << std::endl << "New root: " << binarySearchTreeWithString.remove("okee")->value << std::endl;
+    //std::cout << std::endl << "New root: " << binarySearchTreeWithString.remove("okeeeeee")->value << std::endl;
+    //std::cout << std::endl << "New root: " << binarySearchTreeWithString.remove("o") << std::endl; //nullptr, tree is now empty
 
 
 
@@ -216,18 +216,27 @@ int main()
 
     ////GRAPH ADJACENCY LIST
 
-    //adjacencyList::Graph graphAdjacencyList;
-    //graphAdjacencyList.display();
-    //std::cout << std::endl;
-    //graphAdjacencyList.connectElements(1, 4);
-    //graphAdjacencyList.connectElements(1, 3);
-    //graphAdjacencyList.connectElements(2, 1);
-    //graphAdjacencyList.display();
-    //graphAdjacencyList.connectElements(-1, 4);
-    //graphAdjacencyList.connectElements(1, 6);
-    //graphAdjacencyList.disconnectElements(1, 4);
-    //graphAdjacencyList.display();
-    //graphAdjacencyList.disconnectElements(1, 4); //error due to error in linked list, needs fixing, unit tests would be helpful to test corner cases
+    adjacencyList::Graph graphAdjacencyList;
+    graphAdjacencyList.display();
+    std::cout << std::endl;
+    graphAdjacencyList.connectElements(0, 1);
+    graphAdjacencyList.connectElements(0, 2);
+    graphAdjacencyList.connectElements(1, 2);
+    graphAdjacencyList.connectElements(1, 3);
+    graphAdjacencyList.connectElements(1, 4);
+    graphAdjacencyList.connectElements(3, 4);
+    graphAdjacencyList.display();
+    graphAdjacencyList.connectElements(-1, 4);
+    graphAdjacencyList.connectElements(1, 6);
+    graphAdjacencyList.connectElements(3, 4);
+    graphAdjacencyList.disconnectElements(3, 4);
+    graphAdjacencyList.disconnectElements(3, 4);
+    graphAdjacencyList.display();
+    graphAdjacencyList.connectElements(3, 4);
+    std::cout << std::endl;
+    graphAdjacencyList.bfs(0);
+    std::cout << std::endl;
+    graphAdjacencyList.bfs(3);
 
     ////UNORDERED MAP
     //SomeData data;
@@ -326,5 +335,4 @@ int main()
     //{
     //    std::cout << arr[i] << " ";
     //}
-    
 }
