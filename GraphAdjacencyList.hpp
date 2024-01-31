@@ -12,10 +12,12 @@ namespace adjacencyList
 		bool isUserInputCorrect(uint16_t, uint16_t) const;
 		void displayError() const;
 		bool areConneted(uint16_t, uint16_t); //this graph is undirected so if first is connected with second, this means second is connected to first
+		void dfsUtil(uint16_t, bool[]);
 	public:
 		void display() const;
 		void connectElements(uint16_t, uint16_t);
 		void disconnectElements(uint16_t, uint16_t);
 		void bfs(uint16_t);
+		void dfsRecursive(uint16_t);
 	};
 }//namespace adjacencyList

@@ -24,6 +24,19 @@ bool adjacencyList::Graph::areConneted(uint16_t vertex1, uint16_t vertex2)
 	return result;
 }
 
+void adjacencyList::Graph::dfsUtil(uint16_t vertex, bool visited[])
+{
+	visited[vertex] = true;
+	std::cout << vertex << " "; //print the vertex and mark it as visited
+	for (uint16_t adjacentVertex : graph[vertex])//look for adjacent vertexes of printed vertex
+	{
+		if (visited[adjacentVertex] == false)
+		{
+			dfsUtil(adjacentVertex, visited);
+		}
+	}
+}
+
 void adjacencyList::Graph::display() const
 {
 	for (int i{ 0 }; i < amountOfVertexes; i++)
@@ -90,4 +103,10 @@ void adjacencyList::Graph::bfs(uint16_t vertex) //take starting point where the 
 			}
 		}
 	}
+}
+
+void adjacencyList::Graph::dfsRecursive(uint16_t vertex) //take starting point where the search starts, can be any vertex
+{
+	bool visited[amountOfVertexes]{}; //will track vetrexes that are already visited, {} inizializes all with false by default
+	dfsUtil(vertex, visited);
 }

@@ -237,6 +237,10 @@ int main()
     graphAdjacencyList.bfs(0);
     std::cout << std::endl;
     graphAdjacencyList.bfs(3);
+    std::cout << std::endl;
+    graphAdjacencyList.dfsRecursive(0);
+    std::cout << std::endl;
+    graphAdjacencyList.dfsRecursive(3);
 
     ////UNORDERED MAP
     //SomeData data;
